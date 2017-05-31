@@ -52,7 +52,7 @@
 					Statement s = null;
 
 					try {
-						connect = new ConnectDB().connectDb();
+						connect = ConnectDB.connectDb();
 //						Class.forName("com.mysql.jdbc.Driver");
 //						connect = DriverManager.getConnection("jdbc:mysql://localhost/test" + "?user=root&password=");
 
