@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import oracle.jdbc.OraclePreparedStatement;
+import oracle.jdbc.OracleResultSet;
+
 /**
  * Servlet implementation class Login
  */
@@ -47,5 +50,12 @@ public class Login extends HttpServlet {
 			    
 			}
 		}
+		
+		//oracle
+		//conn = connectDB();
+		//sqlString = "foo"
+		//OraclePreparedStatement pst = (OraclePreparedStatement) conn.prepareStatement();
+		//OracleResultSet rs  = (OracleResultSet) pst.executeQuery();
+		//if(rs.next()) //if true == has result
 	}
 }
