@@ -29,8 +29,9 @@ public class DeleteProduct extends HttpServlet {
 
 		try {
 
-			Class.forName("com.mysql.jdbc.Driver");
-			connect = DriverManager.getConnection("jdbc:mysql://localhost/test" + "?user=root&password=");
+			connect = new ConnectDB().connectDb();
+//			Class.forName("com.mysql.jdbc.Driver");
+//			connect = DriverManager.getConnection("jdbc:mysql://localhost/test" + "?user=root&password=");
 
 			s = connect.createStatement();
 			String sql = "DELETE FROM product WHERE name='"+_name+"'";

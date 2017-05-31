@@ -32,8 +32,9 @@ public class EditProduct extends HttpServlet {
 
 		try {
 
-			Class.forName("com.mysql.jdbc.Driver");
-			connect = DriverManager.getConnection("jdbc:mysql://localhost/test" + "?user=root&password=");
+			connect = new ConnectDB().connectDb();
+//			Class.forName("com.mysql.jdbc.Driver");
+//			connect = DriverManager.getConnection("jdbc:mysql://localhost/test" + "?user=root&password=");
 
 			s = connect.createStatement();
 			String sql = "UPDATE product set name='"+_name+"', qty='"+_qty+"', price='"+_price+"' WHERE name ='"+_nameedit+"'";

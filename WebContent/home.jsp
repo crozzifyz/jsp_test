@@ -1,3 +1,4 @@
+<%@page import="com.natv.myservlet.ConnectDB"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
@@ -6,6 +7,7 @@
 <%@ page import="java.sql.Statement"%>
 <%@ page import="java.sql.Connection"%>
 <%@ page import="java.sql.DriverManager"%>
+<%@ page import="com.natv.myservlet.ConnectDB"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -50,9 +52,9 @@
 					Statement s = null;
 
 					try {
-
-						Class.forName("com.mysql.jdbc.Driver");
-						connect = DriverManager.getConnection("jdbc:mysql://localhost/test" + "?user=root&password=");
+						connect = new ConnectDB().connectDb();
+//						Class.forName("com.mysql.jdbc.Driver");
+//						connect = DriverManager.getConnection("jdbc:mysql://localhost/test" + "?user=root&password=");
 
 						s = connect.createStatement();
 						String sql = "Select * from product";

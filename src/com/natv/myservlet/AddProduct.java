@@ -31,9 +31,9 @@ public class AddProduct extends HttpServlet {
 		Statement s = null;
 
 		try {
-
-			Class.forName("com.mysql.jdbc.Driver");
-			connect = DriverManager.getConnection("jdbc:mysql://localhost/test" + "?user=root&password=");
+			connect = new ConnectDB().connectDb();
+//			Class.forName("com.mysql.jdbc.Driver");
+//			connect = DriverManager.getConnection("jdbc:mysql://localhost/test" + "?user=root&password=");
 
 			s = connect.createStatement();
 			String sql = "INSERT INTO product (name, qty, price) VALUES ('"+_name+"', '"+_qty+"', '"+_price+"')";
